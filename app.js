@@ -40,6 +40,10 @@ app.post("/signUp", async function(req, res) {
     }
 });
 
+app.get("/", (req, res) =>{
+    res.render("./pages/homepage.ejs")
+});
+
 app.listen(3000, () => {
     console.log("Server is running!");
 })
