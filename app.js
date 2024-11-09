@@ -1,11 +1,14 @@
+// Declaration of global variables and module importing
+require('dotenv').config();
 const express = require("express");
-const app = express()
-const mongoose =require("mongoose");
+const app = express();
+const jwt = require('jsonwebtoken');
+const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 
-const MONGO_URL = "mongodb+srv://admin:CgJ17jqlVwo5bvBq@cluster0.vgc6q.mongodb.net/";
+const MONGO_URL = "";
 
 main().then(() => {
     console.log("DB connected successfully");
@@ -24,10 +27,19 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-app.get("/", (req, res) =>{
-    res.render("./pages/homepage.ejs")
+//Route handlers
+app.post("/signUp", async function(req, res) {
+    const { username, password, name } = req.body;
+    
+    try {
+        await UserModel.create({ username, password, name });
+        res.json({ Message: "User Added" });
+    } catch (err) {
+        console.error("Error creating user:", err);
+        res.status(500).json({ error: "Failed to add user" });
+    }
 });
 
-app.listen(8080, () => {
-    console.log("server is listening to port 8080")
-});
+app.listen(3000, () => {
+    console.log("Server is running!");
+})
