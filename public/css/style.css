@@ -193,15 +193,284 @@
 
 /* sec 3 homepage */
 .hsec3des{
-    width: 100vh;
+    width: 100%;
     height: 500px;
     margin-left: 20px;
     margin-right: 20px;
     background-color: #DEEFF1;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sec3sec1{
     width: 50%;
-    
+
 }
+.sec3sec3{
+    width: 40%;
+}
+.eazypgimg{
+    height: 80%;
+    width: 80%;
+    border-radius: 25px;
+}
+
+/* listings page */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #d9f1f4;
+    border: 1px solid #ccd;
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.search-bar input[type="text"] {
+    border: none;
+    background: none;
+    padding: 8px;
+    margin-left: 10px;
+    flex: 1;
+    outline: none;
+    font-size: 16px;
+    color: #3a3a3a;
+    width: fit-content;
+}
+.search-bar .icon {
+    font-size: 20px;
+    color: #707070;
+}
+.button {
+    background-color: #d9f1f4;
+    border: 1px solid #ccd;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3a3a3a;
+    width: fit-content;
+}
+.button:hover {
+    background-color: #c8e6ea;
+}
+
+.listingpara{
+    font-size: 40px;
+    color: #0F1F2B;
+}
+
+.listingcontent{
+    display: flex;
+}
+.gallery-container {
+    width: 50%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .thumbnails {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .thumbnail {
+    flex: 1;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+  
+  .thumbnail img:hover {
+    transform: scale(1.05);
+  }
+  
+  .view-all {
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .view-all span {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .view-all:hover {
+    background: #eeeeee;
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-container {
+      max-width: 100%;
+    }
+    
+    .main-image {
+      height: 300px;
+    }
+    
+    .thumbnails {
+      gap: 4px;
+      padding: 4px;
+    }
+    
+    .thumbnail {
+      height: 60px;
+    }
+  }
+  .property-details {
+    max-width: 600px;
+    padding: 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0 0 12px 0;
+  }
+  
+  .rating {
+    margin-bottom: 12px;
+  }
+  
+  .stars {
+    color: #e0e0e0;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  
+  .star.filled {
+    color: #ffd700;
+  }
+  
+  .location {
+    margin-bottom: 16px;
+  }
+  
+  .location-brand {
+    color: #2196f3;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+  
+  .location-detail {
+    color: #666;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .tag {
+    background: #f5f5f5;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .amenities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .amenity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  
+  .map-section {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+  }
+  
+  .map-button {
+    background: none;
+    border: none;
+    color: #2196f3;
+    font-weight: 500;
+    padding: 0;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  
+  .map-preview {
+    position: relative;
+  }
+  
+  .map-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .map-details {
+    margin-top: 12px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .map-details p {
+    margin: 0;
+  }
+  
+  @media (max-width: 480px) {
+    .property-details {
+      padding: 16px;
+    }
+  
+    .amenities {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  }
