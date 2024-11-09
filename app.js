@@ -27,6 +27,11 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
+
+app.get("/", (req, res) =>{
+    res.render("./pages/homepage.ejs")
+});
+
 //Route handlers
 app.post("/signUp", async function(req, res) {
     const { username, password, name } = req.body;
@@ -40,9 +45,7 @@ app.post("/signUp", async function(req, res) {
     }
 });
 
-app.get("/", (req, res) =>{
-    res.render("./pages/homepage.ejs")
-});
+
 
 app.listen(3000, () => {
     console.log("Server is running!");
