@@ -29,6 +29,19 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
+
+app.get("/", (req, res) => {
+    res.render("pages/homepage"); 
+});
+
+app.get("/listings", (req, res) => {
+    res.render("pages/listings"); 
+});
+
+app.get("/", function(req,res) {
+  
+})
+
 //Route handlers
 app.post("/signUp", async function (req, res) {
   const { username, password, name } = req.body;
