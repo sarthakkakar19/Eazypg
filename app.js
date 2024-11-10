@@ -11,9 +11,11 @@ const { auth } = require("./routes/auth");
 const { UserModel } = require("./db");
 const listing = require("./jsondata.js");
 
+//Exporting dotenv content
 const MONGODB_URI = process.env.MONGODB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
 
+//Database connection
 mongoose
   .connect(MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
@@ -30,14 +32,28 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-
-app.get("/", (req, res) => {
+// Route Handlers
+app.get("/home-page", (req, res) => {
     res.render("pages/homepage"); 
 });
 
 
+app.get('/finances', (req, res) => {
+  res.render("pages/finances/finances");
+});
 
-//Route handlers
+app.get("/roomies", (req,res) => {
+  
+})
+
+app.get('/about', (req, res) => {
+  res.render("pages/about");
+});
+
+app.get('/contact-us', (req, res) => {
+  res.render("pages/contact");
+});
+
 app.post("/signUp", async function (req, res) {
   const { username, password, name } = req.body;
 

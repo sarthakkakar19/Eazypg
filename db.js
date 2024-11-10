@@ -9,9 +9,11 @@ const User = new Schema({
 }, { collection: 'Users' }); 
 
 const PGSchema = new Schema({
-    location: String,
-    amenities: [String],
-    price: Number
+    title: String,
+    description: String,
+    price: String,
+    location : String,
+    state : String
 }, { collection: 'PG' });
 
 const AdminSchema = new Schema({
