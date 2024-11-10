@@ -9,7 +9,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const { auth } = require("./routes/auth");
 const { UserModel } = require("./db");
-const listing = require("./models/listing.js");
+const listing = require("./jsondata.js");
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -35,11 +35,6 @@ app.get("/", (req, res) => {
     res.render("pages/homepage"); 
 });
 
-// index route
-app.get("/listings", async (req, res) => {
-    const alllistings = await listing.find({})
-    res.render("./listings/index.ejs", {alllistings});
-});
 
 
 //Route handlers

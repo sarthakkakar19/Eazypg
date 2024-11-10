@@ -1,4 +1,4 @@
-[
+const samplelistings = [
   {
     title: "Sunny Side PG",
     description:
@@ -234,3 +234,5 @@
     state: "Telangana",
   },
 ];
+
+module.exports = { data: samplelistings };
