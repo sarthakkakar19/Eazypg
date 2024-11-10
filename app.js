@@ -9,6 +9,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const { auth } = require("./routes/auth");
 const { UserModel } = require("./db");
+const listing = require("./jsondata.js");
 
 //Exporting dotenv content
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -36,9 +37,6 @@ app.get("/home-page", (req, res) => {
     res.render("pages/homepage"); 
 });
 
-app.get("/listings", (req, res) => {
-    res.render("pages/listings"); 
-});
 
 app.get('/finances', (req, res) => {
   res.render("pages/finances/finances");
