@@ -34,24 +34,25 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 // Route Handlers
 app.get("/home-page", (req, res) => {
-    res.render("pages/homepage"); 
+  res.render("pages/homepage");
 });
 
-
-app.get('/finances', (req, res) => {
-  res.render("pages/finances/finances");
+app.get("/finances", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/public/pages/finances.html"));
 });
 
-app.get("/roomies", (req,res) => {
-  
-})
+app.get("/roomies", (req, res) => {});
 
-app.get('/about', (req, res) => {
-  res.render("pages/about");
+app.get("/about", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/public/pages/about.html"));
 });
 
-app.get('/contact-us', (req, res) => {
-  res.render("pages/contact");
+app.get("/contact-us", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/public/pages/contact.html"));
+});
+
+app.get("/signUp", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/public/pages/signup/signup.html"));
 });
 
 app.post("/signUp", async function (req, res) {
@@ -66,7 +67,11 @@ app.post("/signUp", async function (req, res) {
   }
 });
 
-app.post("/signIn", async function (req, res) {
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/public/pages/log-in/login.html"));
+});
+
+app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
